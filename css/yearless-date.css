@@ -2,8 +2,8 @@
 .ydatepicker-container {
     position: absolute;
     border: 1px solid #999;
-	padding: .3ex;
-	background-color: #fcfcfc;
+    padding: .3ex;
+    background-color: #fcfcfc;
     font-size: 90%;
 }
 
@@ -44,12 +44,12 @@
     display: inline-block;
     height: 1em;
     margin-top: .65em;
-	color: #212121;
+    color: #212121;
 }
 
 /* Body container */
 .ydatepicker-container .ydatepicker-body {
-	margin-top: .4ex;
+    margin-top: .4ex;
 }
 
 /* Day table */
@@ -61,21 +61,21 @@
 }
 .ydatepicker-container .ydatepicker-body__inner td a {
     border: 1px solid #bbb;
-	border-radius: .2ex .2ex .2ex .2ex;
-	-moz-border-radius: .2ex .2ex .2ex .2ex;
-	-webkit-border-radius: .2ex .2ex .2ex .2ex;
+    border-radius: .2ex .2ex .2ex .2ex;
+    -moz-border-radius: .2ex .2ex .2ex .2ex;
+    -webkit-border-radius: .2ex .2ex .2ex .2ex;
     cursor: pointer;
-	display: block;
-	padding: .4ex 1.5ex .4ex .7ex;
+    display: block;
+    padding: .4ex 1.5ex .4ex .7ex;
     color: #555;
 }
 .ydatepicker-container .ydatepicker-body__inner td a:hover {
-	border: 1px solid #999;
+    border: 1px solid #999;
     color: #212121;
 }
 .ydatepicker-container .ydatepicker-body__inner td.selected a {
-	border: 1px solid #fcefa1;
-	background: #fbf9ee !important;
+    border: 1px solid #fcefa1;
+    background: #fbf9ee !important;
     color: #212121;
 }
 
@@ -98,31 +98,31 @@
 /* 6px border radius */
 .ydatepicker-container .radius__6,
 .ydatepicker-container.radius__6 {
-	border-radius: .6ex .6ex .6ex .6ex;
-	-moz-border-radius: .6ex .6ex .6ex .6ex;
-	-webkit-border-radius: .6ex .6ex .6ex .6ex;
+    border-radius: .6ex .6ex .6ex .6ex;
+    -moz-border-radius: .6ex .6ex .6ex .6ex;
+    -webkit-border-radius: .6ex .6ex .6ex .6ex;
 }
 
 .ydatepicker-container .ydatepicker-body__inner td.selected a,
 .ydatepicker-container .ydatepicker-head__inner,
 .ydatepicker-container .ydatepicker-body__inner td a {
-	background: #f2f2f2; /* Old browsers */
-	background: -moz-linear-gradient(top,  #f2f2f2 1%, #f2f2f2 50%, #ededed 50%, #ededed 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#f2f2f2), color-stop(50%,#f2f2f2), color-stop(50%,#ededed), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #f2f2f2 1%,#f2f2f2 50%,#ededed 50%,#ededed 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #f2f2f2 1%,#f2f2f2 50%,#ededed 50%,#ededed 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #f2f2f2 1%,#f2f2f2 50%,#ededed 50%,#ededed 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  #f2f2f2 1%,#f2f2f2 50%,#ededed 50%,#ededed 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+    background: #f2f2f2; /* Old browsers */
+    background: -moz-linear-gradient(top,  #f2f2f2 1%, #f2f2f2 50%, #ededed 50%, #ededed 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#f2f2f2), color-stop(50%,#f2f2f2), color-stop(50%,#ededed), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #f2f2f2 1%,#f2f2f2 50%,#ededed 50%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #f2f2f2 1%,#f2f2f2 50%,#ededed 50%,#ededed 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #f2f2f2 1%,#f2f2f2 50%,#ededed 50%,#ededed 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #f2f2f2 1%,#f2f2f2 50%,#ededed 50%,#ededed 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
 }
 
 .ydatepicker-container .ydatepicker-body__inner td a:hover {
     background: #ebebeb; /* Old browsers */
-	background: -moz-linear-gradient(top,  #ebebeb 1%, #ebebeb 50%, #e5e5e5 50%, #e5e5e5 50%, #e5e5e5 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#ebebeb), color-stop(50%,#ebebeb), color-stop(50%,#e5e5e5), color-stop(50%,#e5e5e5), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #ebebeb 1%,#ebebeb 50%,#e5e5e5 50%,#e5e5e5 50%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #ebebeb 1%,#ebebeb 50%,#e5e5e5 50%,#e5e5e5 50%,#e5e5e5 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #ebebeb 1%,#ebebeb 50%,#e5e5e5 50%,#e5e5e5 50%,#e5e5e5 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  #ebebeb 1%,#ebebeb 50%,#e5e5e5 50%,#e5e5e5 50%,#e5e5e5 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+    background: -moz-linear-gradient(top,  #ebebeb 1%, #ebebeb 50%, #e5e5e5 50%, #e5e5e5 50%, #e5e5e5 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#ebebeb), color-stop(50%,#ebebeb), color-stop(50%,#e5e5e5), color-stop(50%,#e5e5e5), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #ebebeb 1%,#ebebeb 50%,#e5e5e5 50%,#e5e5e5 50%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #ebebeb 1%,#ebebeb 50%,#e5e5e5 50%,#e5e5e5 50%,#e5e5e5 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #ebebeb 1%,#ebebeb 50%,#e5e5e5 50%,#e5e5e5 50%,#e5e5e5 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #ebebeb 1%,#ebebeb 50%,#e5e5e5 50%,#e5e5e5 50%,#e5e5e5 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
 }

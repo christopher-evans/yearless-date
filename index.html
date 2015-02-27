@@ -22,20 +22,20 @@
             <input type="text" id="datepicker_simple" value="17 March" />
         </div>
         <div class="container">
-		    <input type="text" id="datepicker_settings" value="17 March" />
+            <input type="text" id="datepicker_settings" value="17 March" />
         </div>
 
         <script>
-			$('#datepicker_simple').YearlessDatepicker();
-			
-			$('#datepicker_settings').YearlessDatepicker({
+            $('#datepicker_simple').YearlessDatepicker();
+
+            $('#datepicker_settings').YearlessDatepicker({
                 on: {
                     select: function(date) {
-						$('#test').html("Selected: " + date.toString("long"));
-					},
-					change: function(date) {
-						// Do something
-					}
+                        $('#test').html("Selected: " + date.toString("long"));
+                    },
+                    change: function(date) {
+                        // Do something
+                    }
                 },
                 format: "short",
                 separator: "-",//
@@ -46,20 +46,20 @@
                     effect: "slide",
                     time: 200
                 },
-				alt: {
-					field: 'alt_field_name',
-					format: 'long'
-				},
-				position: {
-					input: {
-						v: "bottom",
-						h: "left"
-					},
-					container: {
-						v: "top",
-						h: "left"
-					}
-				},
+                alt: {
+                    field: 'alt_field_name',
+                    format: 'long'
+                },
+                position: {
+                    input: {
+                        v: "bottom",
+                        h: "left"
+                    },
+                    container: {
+                        v: "top",
+                        h: "left"
+                    }
+                },
                 date: [1, 6],
                 min: [1, 2],
                 max: [2, 20]
