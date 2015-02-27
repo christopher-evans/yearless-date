@@ -6,11 +6,28 @@
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css"></link>
         <link rel="stylesheet" href="css/yearless-date.min.css"></link>
+
+        <style>
+            body {
+                padding: 100px;
+            }
+            div.container {
+                height: 270px;
+            }
+        </style>
     </head>
-    <body style="padding: 50px 200px;">
-        <input type="text" id="datepicker_simple" value="17 March" />
-		<br><br><br><br><br><br><br><br><br><br><br><br>
-		<input type="text" id="datepicker_settings" value="17 March" />
+    <body>
+
+        <div class="container">
+            <input type="text" id="datepicker_simple" value="17 March" />
+        </div>
+        <div class="container">
+		    <input type="text" id="datepicker_settings" value="17 March" />
+        </div>
+        <div class="container">
+            <input type="text" id="my_text_input" value="17 March" />
+        </div>
+
         <script>
 			$('#datepicker_simple').YearlessDatepicker();
 			
@@ -20,7 +37,7 @@
 						$('#test').html("Selected: " + date.toString("long"));
 					},
 					change: function(date) {
-						//alert("Changed to " + date.toString("short"));
+						// Do something
 					}
                 },
                 format: "short",
@@ -51,7 +68,6 @@
                 min: [1, 2],
                 max: [2, 20]
             });
-			
         </script>
     </body>
 </html>
