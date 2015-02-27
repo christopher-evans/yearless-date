@@ -706,7 +706,7 @@
             }, this));
 
             // Day selection
-            this.container.find('.ydatepicker-body td[data-day]').on('click', $.proxy(this.onDaySelect, this));
+            this.container.find('.ydatepicker-body td[data-day] a').on('click', $.proxy(this.onDaySelect, this));
 
             // Input click
             this.input.on('click', $.proxy( function(e){
