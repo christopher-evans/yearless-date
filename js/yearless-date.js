@@ -912,6 +912,7 @@
                 try {
                     date = new YearlessDate(date);
                 } catch(e) {
+					console.log(e);
                     date = false;
                 }
             }
@@ -920,7 +921,7 @@
 
         setMin: function(date)
         {
-			date = this._parseDate();
+			date = this._parseDate(date);
 			if (date) {
 				if (!this.settings.max || this.date.isBetween(date, this.settings.max)) {
 					this.settings.min = date;
@@ -930,10 +931,10 @@
 
         setMax: function(date)
         {
-            date = this._parseDate();
+            date = this._parseDate(date);
 			if (date) {
 				if (!this.settings.min || this.date.isBetween(this.settings.min, date)) {
-					this.settings.min = date;
+					this.settings.max = date;
 				}
 			}
         },

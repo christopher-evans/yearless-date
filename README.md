@@ -29,7 +29,7 @@ $('#my_text_input').YearlessDatepicker();
 
 Customize the date picker:
 
-```javascript    
+```javascript
 $('#my_text_input').YearlessDatepicker({
     on: {
         select: function(date) {
@@ -68,4 +68,40 @@ $('#my_text_input').YearlessDatepicker({
     min: [1, 2], //   When min and max are both set (and are different dates)
     max: [2, 20] //		only dates between min and max can be selected (works cyclically around the year)
 });
+```
+
+Set a date:
+
+```javascript
+$('#my_text_input').YearlessDatepicker("setDate", "09 Jan");
+```
+			
+Get a date:
+
+```javascript
+var date = $('#my_text_input').YearlessDatepicker("getDate");
+alert(date.toString("long"));
+```
+			
+Set the min / max:
+
+```javascript
+$('#my_text_input').YearlessDatepicker("setMin", "2 Jan");
+$('#my_text_input').YearlessDatepicker("setMax", "13 Jan");
+```
+			
+Add / remove events:
+
+```javascript
+$('#my_text_input').YearlessDatepicker("on", "select", false);
+$('#my_text_input').YearlessDatepicker("on", "select", function(date){
+	alert(date.toString("monthDay", "-"));
+});
+```
+			
+			
+Destroy a datepicker:
+
+```javascript
+$('#my_text_input').YearlessDatepicker("destroy");
 ```
