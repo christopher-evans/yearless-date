@@ -1,17 +1,17 @@
 # yearless-date.js
 
-yearless-date.js is a yearless date picker using the jQuery library
+A yearless date picker plugin for the jQuery library.
 
 
 ### Getting started
 
-Add js/yearless-date.min.js and jQuery 1.8 or higher to the page
+Add yearless-date.min.js and jQuery 1.8 or higher to the page:
 ```html
 <script src="https://code.jquery.com/jquery-1.11.2.min.js" type="text/javascript"></script>
 <script src="js/yearless-date.min.js" type="text/javascript"></script>
 ```
 
-Add css/yearless-date.min.css and (optionally) normalize.css to the page
+Add yearless-date.min.css and (optionally) normalize.css to the page:
 
 ```html
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css"></link>
