@@ -19,11 +19,11 @@
 .ydatepicker-container .ydatepicker-head__left,
 .ydatepicker-container .ydatepicker-head__right {
     cursor: pointer;
-    width: 1em;
-    height: 1em;
+    width: 1.4em;
+    height: 1.4em;
     display: inline-block;
     position: absolute;
-    top: .75em;
+    top: .55em;
 }
 
 .ydatepicker-container .ydatepicker-head__inner svg {
