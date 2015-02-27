@@ -60,8 +60,8 @@ $('#my_text_input').YearlessDatepicker({
                        // If "json" is chosen the value is formatted as '{"m": 1, "d", 2}'
                        // i.e. in php:
                        //     json_decode($_POST['alt_field_name'], true) = array(
-                       //                                                       m: 1,
-                       //                                                       d: 2
+                       //                                                       m => 1,
+                       //                                                       d => 2
                        //                                                   );
     },
     position: { // This works the same way as the jQuery UI my/at function
@@ -136,9 +136,11 @@ var date = $('#my_text_input').YearlessDatepicker("getDate"), // 09 Jan
     anotherDate = date.clone(); // 09 Jan;
 
 alert(date.compareTo(anotherDate) ? "The dates are different" : "The dates are the same");
+    // The dates are the same
 
 anotherDate.shiftMonth(-1).shiftDay(1); // 10 Dec
 
 alert(date.compareTo(anotherDate) < 0 ? anotherDate.toString("long") +
-      " is later in the year" : "My code isn't working.");
+      " is later in the year" : "My code isn't working");
+        // 10 December is later in the year
 ```

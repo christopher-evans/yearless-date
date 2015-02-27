@@ -569,8 +569,7 @@
 				separator: "/",
 				british: false,
 				css: {
-					display: "none",
-					width: "250px"
+					display: "none"
 				},
 				position: {
 					input: {
@@ -659,20 +658,14 @@
         drawPicker: function()
         {
             var monthName = this.date.getMonth("long"),
-				arrowIconSize = 20,
-				svgPathSize = 32,
-				arrowSvgPath = ["m28","14l-19.2","0l4.62","-4.62c0.394","-0.394 0.58","-0.864 0.58","-1.38c0","-0.984 -0.813","-2 -2","-2c-0.531","0 -0.994",
-								"0.193 -1.38","0.58l-7.958","7.958c-0.328","0.328 -0.662","0.733 -0.662","1.462s0.279","1.08 0.646","1.447001l7.974","7.973c0.386",
-								"0.386999 0.849","0.58 1.38","0.58c1.188","0 2","-1.016001 2","-2c0","-0.516001 -0.186","-0.986 -0.58","-1.379999l-4.62",
-								"-4.620001l19.2","0c1.104","0 2","-0.896 2","-2s-0.896","-2 -2","-2z"],
-				arrSvg = "<svg width='" + arrowIconSize + "px' height='" + arrowIconSize + "px'>\
-							<path d='" + arrowSvgPath.join(",") + "' transform='scale(" + (arrowIconSize / svgPathSize) + ") {{transform-rotate}}'/>\
-						</svg>",
+				arrSvg = "<svg id='simple-left' class='custom-icon' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100'>\
+                              <path class='inner-shape' transform='{{transform-rotate}}' d='M98.797,45.427H19.864l22.75-21.321H28.832L1.203,50l27.629,25.893h13.782l-22.75-21.32h78.933V45.427z'></path>\
+                          </svg>",
                 html = "<div class='ydatepicker-head noselect'>\
                             <div class='ydatepicker-head__inner radius__6 gradient__light'>\
-                                <a class='ydatepicker-head__left' data-shift='-1'>" + arrSvg.replace("{{transform-rotate}}", "") + "</a>\
+                                <a class='ydatepicker-head__left' data-shift='-1'>" + arrSvg + "</a>\
                                 <span class='ydatepicker-head__month'><strong>" + monthName + "</strong></span>\
-                                <a class='ydatepicker-head__right' data-shift='1'>" + arrSvg.replace("{{transform-rotate}}", "rotate(-180 16,16)") + "</a>\
+                                <a class='ydatepicker-head__right' data-shift='1'>" + arrSvg.replace("{{transform-rotate}}", "rotate(-180, 50, 50)") + "</a>\
                             </div>\
                         </div>\
                         <div class='ydatepicker-body noselect'>\
