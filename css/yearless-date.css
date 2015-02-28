@@ -87,7 +87,6 @@
 }
 
 /* Prevent selection */
-/* Picker input */
 .ydatepicker-container .noselect {
     -webkit-touch-callout: none;
     -webkit-user-select: none;

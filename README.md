@@ -1,10 +1,8 @@
 # yearless-date.js
 
-A date picker plugin from the jQuery library with no year displayed. There are some minor issues with hiding the year on a full date picker that this resolves.
+A date picker plugin for the jQuery library for a generic non-leap year. Includes a class for treating yearless dates as a month and day mod 365 days.
 
 ![DatePicker](/doc/sample.png?raw=true)
-
-A yearless date is a day mod 365, so cycles from 31 Dec to 01 Jan; a YearlessDate class is added to the global namespace for handling these.
 
 
 ### Getting started
