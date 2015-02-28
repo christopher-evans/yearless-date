@@ -647,8 +647,8 @@
         destroy: function()
         {
             // Clean input
-            this.input.attr("readonly", false);
-            this.input.off("change");
+            this.input.attr("readonly", false)
+                      .off("change");
 
             // Remove container from DOM
             this.container.remove();

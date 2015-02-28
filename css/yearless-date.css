@@ -7,7 +7,7 @@
     font-size: 90%;
 }
 
-/* Head container */
+/* Picker head */
 .ydatepicker-container .ydatepicker-head__inner {
     text-align: center;
     height: 2.5em;
@@ -52,7 +52,7 @@
     margin-top: .4ex;
 }
 
-/* Day table */
+/* Date table */
 .ydatepicker-container .ydatepicker-body__inner table {
     width: 100%;
 }
@@ -85,7 +85,9 @@
     color: #aaa;
     cursor: auto;
 }
+
 /* Prevent selection */
+/* Picker input */
 .ydatepicker-container .noselect {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -103,6 +105,7 @@
     -webkit-border-radius: .6ex .6ex .6ex .6ex;
 }
 
+/* Two tone coloring */
 .ydatepicker-container .ydatepicker-body__inner td.selected a,
 .ydatepicker-container .ydatepicker-head__inner,
 .ydatepicker-container .ydatepicker-body__inner td a {
