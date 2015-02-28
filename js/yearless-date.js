@@ -555,9 +555,7 @@
             if (this.input.data("YearlessDatepicker") === "true") {
                 return;
             }
-            this.input.change(function(){ alert("moo"); });
-            var f = $.proxy(function(){}, this);
-            this.input.change($.proxy(this.onInputChange, this))
+            this.input.on("change", $.proxy(this.onInputChange, this))
                     .attr("readonly", true);
 
             // Initialize settings
@@ -650,6 +648,7 @@
         {
             // Clean input
             this.input.attr("readonly", false);
+            this.input.off("change");
 
             // Remove container from DOM
             this.container.remove();
@@ -658,12 +657,12 @@
         drawPicker: function()
         {
             var monthName = this.date.getMonth("long"),
-                arrSvg = "<svg id='simple-left' class='custom-icon' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100'>\
+                arrSvg = "<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100'>\
                               <path class='inner-shape' transform='{{transform-rotate}}' d='M98.797,45.427H19.864l22.75-21.321H28.832L1.203,50l27.629,25.893h13.782l-22.75-21.32h78.933V45.427z'></path>\
                           </svg>",
                 html = "<div class='ydatepicker-head noselect'>\
                             <div class='ydatepicker-head__inner radius__6 gradient__light'>\
-                                <a class='ydatepicker-head__left' data-shift='-1'>" + arrSvg + "</a>\
+                                <a class='ydatepicker-head__left' data-shift='-1'>" + arrSvg.replace("{{transform-rotate}}", "") + "</a>\
                                 <span class='ydatepicker-head__month'><strong>" + monthName + "</strong></span>\
                                 <a class='ydatepicker-head__right' data-shift='1'>" + arrSvg.replace("{{transform-rotate}}", "rotate(-180, 50, 50)") + "</a>\
                             </div>\
