@@ -4,7 +4,6 @@
     border: 1px solid #999;
     padding: .3ex;
     background-color: #fcfcfc;
-    font-size: 90%;
 }
 
 /* Picker head */
@@ -55,9 +54,11 @@
 /* Date table */
 .ydatepicker-container .ydatepicker-body__inner table {
     width: 100%;
+    border-spacing: 2px;
+    border-collapse: collapse;
 }
 .ydatepicker-container .ydatepicker-body__inner td {
-    padding: .15ex;
+    padding: 1px;
 }
 .ydatepicker-container .ydatepicker-body__inner td a {
     border: 1px solid #bbb;
@@ -67,6 +68,7 @@
     cursor: pointer;
     display: block;
     padding: .4ex 1.5ex .4ex .7ex;
+    font-size: .9em;
     color: #555;
 }
 .ydatepicker-container .ydatepicker-body__inner td a:hover {
