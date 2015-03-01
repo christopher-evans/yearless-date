@@ -24,16 +24,14 @@
         initializing = false;
 
         // Copy the properties over onto the new prototype
-        for(var name in prop)
-        {
+        for (var name in prop) {
             // Check if we're overwriting an existing function
             var test = typeof prop[name] === "function" &&
                 typeof _super[name] === "function" &&
                 fnTest.test(prop[name]);
 
-            if(test)
-            {
-                prototype[name] = (function(name, fn){
+            if (test) {
+                prototype[name] = (function(name, fn) {
                     return function() {
                         var tmp = this._super;
 
@@ -49,19 +47,15 @@
                         return ret;
                     };
                 })(name, prop[name]);
-            }
-            else
-            {
+            } else {
                 prototype[name] = prop[name];
             }
         }
 
         // The dummy class constructor
-        function Class()
-        {
+        function Class() {
             // All construction is actually done in the init method
-            if ( !initializing && this.init )
-            {
+            if ( !initializing && this.init ) {
                 this.init.apply(this, arguments);
             }
         }
@@ -197,13 +191,14 @@
     window.YearlessDate = Class.extend({
 
         /**
-         * Constructor for YearlessDate -- takes either a string ("01 March", "Mar 1") or an array
-         * ([1,3], [3,1]) and a settings object
+         * Create a new YearlessDate. Takes either a string ("01 March", "Mar 1") or an array
+         * ([1,3], [3,1]) or a pair of numbers, followed by a settings object.
          *
          * @constructor
          * @public
+         * @return YearlessDate
          */
-        init: function(  )
+        init: function( /* args */ )
         {
             // Ensure default settings
             var settings = arguments[arguments.length-1];
@@ -241,14 +236,14 @@
             }
         },
 
-        _oneArgumentInit: function()
+        _oneArgumentInit: function(arg)
         {
-            if (isString(arguments[0])) {
-                return this._parseStr(arguments[0]);
-            } else if ($.isArray(arguments[0])) {
-                return this._parseArr(arguments[0]);
+            if (isString(arg)) {
+                return this._parseStr(arg);
+            } else if ($.isArray(arg)) {
+                return this._parseArr(arg);
             }
-            throw new Error("Invalid argument: " + arguments[0]);
+            throw new Error("Invalid argument: " + arg);
         },
 
         _twoArgumentInit: function(firstArg, secondArg)
@@ -266,7 +261,7 @@
         {
             var arr,
                 foundSeparator = false,
-                monthFirst = false;
+                monthFirst;
 
             // Split into array
             $.each(separators, function(i, separator){
@@ -297,7 +292,7 @@
 
         _parseArr: function(arr, monthFirst)
         {
-            var monthFirst = isBoolean(monthFirst) ? monthFirst : this.settings.british,
+            var monthFirst = isBoolean(monthFirst) ? monthFirst : !this.settings.british,
                 m = monthFirst ? arr[0] : arr[1],
                 d = monthFirst ? arr[1] : arr[0];
 
@@ -538,7 +533,10 @@
                 "in": "show",
                 out: "hide"
             }
-        };
+        },
+        publicMethods = [ "setDate", "destroy", "on", "setMin", "setMax" ],
+        publicMethodsWithReturn = [ "getDate" ],
+        publicName = "YearlessDatepicker";
 
 
     window.YearlessDate.Picker = Class.extend({
@@ -552,7 +550,7 @@
             }
 
             // Check if datepicker already exists for this input
-            if (this.input.data("YearlessDatepicker") === "true") {
+            if (this.input.data(publicName)) {
                 return;
             }
             this.input.on("change", $.proxy(this.onInputChange, this))
@@ -648,10 +646,14 @@
         {
             // Clean input
             this.input.attr("readonly", false)
-                      .off("change");
+                      .off("change")
+                .data(publicName, false);
 
             // Remove container from DOM
             this.container.remove();
+
+            // Allow chaining
+            return this;
         },
 
         drawPicker: function()
@@ -699,7 +701,7 @@
 
             // Month change arrow hover
             this.container.find('.ydatepicker-head__left svg,.ydatepicker-head__right svg').hover( $.proxy(function(e){
-                $(e.target).closest('svg').find('path').attr('fill', 'darkgrey');
+                $(e.target).closest('svg').find('path').attr('fill', 'darkgray');
             }, this), $.proxy(function(e){
                 $(e.target).closest('svg').find('path').attr('fill', 'black');
             }, this));
@@ -743,7 +745,7 @@
             if (this.container.data("ydatepicker__open") !== "true") {
 
                 // If not already open, reset date
-                this.shiftMonth(this.date.getMonth("numeric") - this.currentDate.getMonth("numeric"));
+                this.shiftDisplayedMonth(this.date.getMonth("numeric") - this.currentDate.getMonth("numeric"));
 
                 // Set up view
                 this.setDisplay();
@@ -764,10 +766,10 @@
         onMonthShiftClick: function(e)
         {
             var shift = $(e.target).closest('[data-shift]').data("shift");
-            this.shiftMonth(shift);
+            this.shiftDisplayedMonth(shift);
         },
 
-        shiftMonth: function(num)
+        shiftDisplayedMonth: function(num)
         {
             this.currentDate.shiftMonth(num);
             this.setDisplay();
@@ -869,6 +871,9 @@
             }
             this.setInput();
             this.setAltField();
+
+            // Allow chaining
+            return this;
         },
 
         onInputChange: function(e)
@@ -896,13 +901,17 @@
                 this.settings.on[event] = callback;
             }
 
+            // Allow chaining
+            return this;
         },
 
         _parseDate: function(date)
         {
             if (!(date instanceof YearlessDate)) {
                 try {
-                    date = new YearlessDate(date);
+                    date = new YearlessDate(date, {
+                        british: this.settings.british
+                    });
                 } catch(e) {
                     console.log(e);
                     date = false;
@@ -919,6 +928,9 @@
                     this.settings.min = date;
                 }
             }
+
+            // Allow chaining
+            return this;
         },
 
         setMax: function(date)
@@ -929,6 +941,9 @@
                     this.settings.max = date;
                 }
             }
+
+            // Allow chaining
+            return this;
         },
 
         position: function(position)
@@ -974,7 +989,7 @@
 
             el = $(settings.field);
             if (el.length < 1) {
-                el = $('<input></input>', {
+                el = $('<input />', {
                     attr: {
                         id: settings.field,
                         name: settings.field,
@@ -1001,29 +1016,28 @@
     });
 
     /**
-     * jQuery wrapper for yearless datepicker
+     * jQuery wrapper for yearless date picker
      */
-
-    var publicMethods = [
-            "setDate", "getDate", "destroy", "on", "setMin", "setMax"
-        ],
-        publicName = "YearlessDatepicker";
-
-    // jQuery it up
     $.fn.YearlessDatepicker = function(method)
     {
         var instance = this.data(publicName);
 
-        if (method === "destroy") {
+        if (instance && ($.inArray(method, publicMethods) > -1)) {
+            // Public method that can be chained
             instance[method].apply(instance, Array.prototype.slice.call(arguments, 1));
-            this.data(publicName, false);
-        } else if (instance && ($.inArray(method, publicMethods) > -1)) {
+            return this;
+        } else if (instance && ($.inArray(method, publicMethodsWithReturn) > -1)) {
+            // Public method with return value
             return instance[method].apply(instance, Array.prototype.slice.call(arguments, 1));
         } else if (isObject(method) || !method) {
+            // Instantiation
             if (!instance) {
-                this.data(publicName, new YearlessDate.Picker(this, method));
+                return this.data(publicName, new YearlessDate.Picker(this, method));
             }
+            // Fail quietly
+            return this;
         } else {
+            // Method doesn't exists
             $.error("Method " + method + " does not exist for jQuery." + publicName);
         }
     };

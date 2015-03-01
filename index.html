@@ -4,8 +4,8 @@
         <script src="https://code.jquery.com/jquery-1.11.2.min.js" type="text/javascript"></script>
         <script src="js/yearless-date.min.js" type="text/javascript"></script>
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css"></link>
-        <link rel="stylesheet" href="css/yearless-date.min.css"></link>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css" />
+        <link rel="stylesheet" href="css/yearless-date.min.css" />
 
         <style>
             body {
@@ -25,6 +25,7 @@
         </div>
 
         <script>
+
             $('#datepicker_simple').YearlessDatepicker();
 
             $('#datepicker_settings').YearlessDatepicker({
@@ -59,9 +60,9 @@
                         h: "left"
                     }
                 },
-                date: [1, 6],
-                min: [1, 2],
-                max: [2, 20]
+                date: "6-1",
+                min: "09 Sept",
+                max: new YearlessDate(2, 20)
             });
         </script>
     </body>

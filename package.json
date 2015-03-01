@@ -1,0 +1,46 @@
+{
+    "name": "yearless-date",
+    "version": "1.0.0",
+    "description": "A date picker plugin for the jQuery library for a generic non-leap year.",
+    "homepage": "https://github.com/christopher-evans/yearless-date",
+    "author": {
+        "name": "Christopher Evans",
+        "email": "c.m.evans0@gmail.com",
+        "url": "https://github.com/christopher-evans"
+    },
+    "keywords": [
+        "jquery-plugin",
+        "jquery",
+        "date-picker",
+        "yearless-date"
+    ],
+    "main": "./js/yearless-date.js",
+    "directories": {
+        "lib": "js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/christopher-evans/yearless-date.git"
+    },
+    "bugs": {
+        "url": "https://github.com/christopher-evans/yearless-date/issues"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "jquery": ">=1.8"
+    },
+    "ignore": [
+        "index.html",
+        "doc"
+    ],
+    "spm": {
+        "main": "./js/yearless-date.js",
+        "dependencies": {
+            "jquery": ">=1.8"
+        },
+        "ignore": [
+            "index.html",
+            "doc"
+        ]
+    }
+}
