@@ -659,20 +659,19 @@
         drawPicker: function()
         {
             var monthName = this.date.getMonth("long"),
-                arrSvg = "<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100'>\
-                              <path class='inner-shape' transform='{{transform-rotate}}' d='M98.797,45.427H19.864l22.75-21.321H28.832L1.203,50l27.629,25.893h13.782l-22.75-21.32h78.933V45.427z'></path>\
-                          </svg>",
-                html = "<div class='ydatepicker-head noselect'>\
-                            <div class='ydatepicker-head__inner radius__6 gradient__light'>\
-                                <a class='ydatepicker-head__left' data-shift='-1'>" + arrSvg.replace("{{transform-rotate}}", "") + "</a>\
-                                <span class='ydatepicker-head__month'><strong>" + monthName + "</strong></span>\
-                                <a class='ydatepicker-head__right' data-shift='1'>" + arrSvg.replace("{{transform-rotate}}", "rotate(-180, 50, 50)") + "</a>\
-                            </div>\
-                        </div>\
-                        <div class='ydatepicker-body noselect'>\
-                            <div class='ydatepicker-body__inner'>\
-                                <table>\
-                                    <tr>";
+                arrSvg = "<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100'>" +
+                              "<path class='inner-shape' transform='{{transform-rotate}}' d='M98.797,45.427H19.864l22.75-21.321H28.832L1.203,50l27.629,25.893h13.782l-22.75-21.32h78.933V45.427z'></path>" +
+                          "</svg>",
+                html = "<div class='ydatepicker-head noselect'>" +
+                            "<div class='ydatepicker-head__inner radius__6 gradient__light'>" +
+                                "<a class='ydatepicker-head__left' data-shift='-1'>" + arrSvg.replace("{{transform-rotate}}", "") + "</a>" +
+                                "<span class='ydatepicker-head__month'><strong>" + monthName + "</strong></span>" +
+                                "<a class='ydatepicker-head__right' data-shift='1'>" + arrSvg.replace("{{transform-rotate}}", "rotate(-180, 50, 50)") + "</a>" +
+                            "</div>" +
+                        "</div>" +
+                        "<div class='ydatepicker-body noselect'>" +
+                            "<div class='ydatepicker-body__inner'>" +
+                               "<table><tr>";
 
             for (var i = 1; i <= maxDaysInMonth; i++) {
 
@@ -683,10 +682,7 @@
                 html += "<td data-day='" + i + "'><a class='gradient__dark'>" + i + "</a></td>";
             }
 
-            html +=                 "</tr>\
-                                </table>\
-                            </div>\
-                        </div>";
+            html += "</tr></table></div></div>";
 
             this.container.html(html);
 
