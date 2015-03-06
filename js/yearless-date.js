@@ -391,7 +391,7 @@
             if (format === "numeric") {
                 return m;
             }
-            return ( format ? "0" : "" ) + m;
+            return ( (format && (m < 10)) ? "0" : "" ) + m;
         },
 
         getDay: function(format)
@@ -399,7 +399,7 @@
             if (format === "numeric") {
                 return this.md[1];
             }
-            return ( format ? "0" : "" ) + this.md[1];
+            return ( (format && (this.md[1] < 10)) ? "0" : "" ) + this.md[1];
         },
 
         shiftMonth: function(num)
